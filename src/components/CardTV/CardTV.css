@@ -1,0 +1,28 @@
+/* CardTV.css */
+
+/* Keyframes for sliding effect */
+@keyframes slideIn {
+  from {
+    transform: translateY(20px); /* Bắt đầu từ dưới lên */
+    opacity: 0; /* Hoàn toàn trong suốt */
+  }
+  to {
+    transform: translateY(0); /* Di chuyển về vị trí ban đầu */
+    opacity: 1; /* Hoàn toàn hiển thị */
+  }
+}
+
+.card {
+  transition: background-image 0.5s ease; /* Chuyển đổi mượt mà cho hình ảnh */
+}
+
+.card .text-container,
+.card .h2-container {
+  opacity: 0; /* Ban đầu ẩn chữ */
+  animation: slideIn 0.5s ease forwards; /* Thêm hiệu ứng trượt cho chữ */
+}
+
+.card.show .text-container,
+.card.show .h2-container {
+  opacity: 1; /* Hiện chữ khi card có class show */
+}

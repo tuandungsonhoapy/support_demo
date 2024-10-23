@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="number-slide"],
+[class*=" number-slide"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: #fff;
+  font-weight: 500;
+  height: 600px; /* Bạn có thể thay đổi chiều cao tùy ý */
+  max-height: 100vh;
+  background: none; /* Loại bỏ màu nền */
+}
+
+.number-slide1,
+.number-slide2,
+.number-slide3,
+.number-slide4,
+.number-slide5,
+.number-slide6 {
+  background: none; /* Loại bỏ tất cả màu nền và gradient */
+}
+
+.navigation-wrapper {
+  position: relative;
+  width: 100%; /* Đặt chiều rộng full width */
+  max-width: 100vw; /* Đảm bảo slider không vượt quá chiều rộng viewport */
+}
+
+.dots {
+  display: flex;
+  padding: 10px 0;
+  justify-content: center;
+}
+
+.dot {
+  border: none;
+  width: 10px;
+  height: 10px;
+  background: #c5c5c5;
+  border-radius: 50%;
+  margin: 0 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.dot:focus {
+  outline: none;
+}
+
+.dot.active {
+  background: #000;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: #939191; /* Màu xám cho trạng thái bình thường */
+  cursor: pointer;
+}
+
+.arrow--left {
+  left: 5px;
+}
+
+.arrow--right {
+  right: 5px;
+}
+
+.arrow--disabled {
+  fill: rgba(255, 255, 255, 0.5); /* Màu xám cho nút vô hiệu hóa */
+  cursor: not-allowed; /* Hiển thị con trỏ không cho phép */
+}
+
+/* Thay đổi màu khi chuột di qua nút */
+.arrow:hover {
+  fill: rgb(0, 0, 0); /* Màu đen khi di chuột qua */
+}
+
+/* Thay đổi màu cho các nút vô hiệu hóa */
+.arrow--disabled {
+  fill: #939191; /* Màu xám cho nút vô hiệu hóa */
+  cursor: not-allowed; /* Hiển thị con trỏ không cho phép */
+}

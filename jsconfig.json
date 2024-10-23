@@ -1,0 +1,10 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": ".", // Đặt gốc đường dẫn là thư mục gốc của dự án
+    "paths": {
+      "@/*": ["src/*"] // Thiết lập alias @ trỏ tới thư mục src
+    }
+  }
+}

@@ -1,0 +1,96 @@
+/* Wrapper div with height and overflow control */
+.wrapper {
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Prevents overflow of internal content */
+  margin: 0 auto; /* Centers the wrapper */
+  display: flex;
+  justify-content: center; /* Center the card horizontally */
+  align-items: center; /* Center the card vertically */
+}
+
+/* Card */
+.card {
+  background-color: white;
+  width: 100%; /* Full width within the card */
+  max-width: 100%; /* Ensures the card stays within the parent div */
+  padding: 0px;
+  margin: 0 auto;
+  border-radius: 10px; /* Add rounded corners for a modern look */
+  text-align: center;
+  opacity: 0; /* Hidden initially */
+  transform: translateX(50px); /* Start off-screen from the right */
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out; /* Smooth transition for both */
+}
+
+/* Animation effect when the card becomes visible */
+.card.show {
+  opacity: 1; /* Fully visible */
+  transform: translateX(0); /* Move to the center */
+}
+
+/* Image should fit within card */
+.phone-image {
+  width: 50%; /* Adjusted to 50% to avoid overflow */
+  height: auto; /* Adjust height accordingly */
+  max-height: 500px; /* Prevent image from getting too large */
+  border-radius: 0; /* No border-radius for the image */
+  margin-top: 0px; /* Space between image and top */
+}
+
+/* Animation for afterLayout div */
+.afterLayout {
+  opacity: 0; /* Start hidden */
+  transform: translateX(50px); /* Start off-screen from the right */
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out; /* Smooth transition for sliding and fading */
+}
+
+.afterLayout.animate {
+  opacity: 1; /* Fully visible */
+  transform: translateX(0); /* Slide in from the right */
+}
+
+/* Buttons container */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Increased gap between buttons for spacing */
+  margin-top: 20px;
+}
+
+.learn-more,
+.buy-now {
+  background-color: transparent;
+  color: black;
+  padding: 10px 20px;
+  border: 2px solid black;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out; /* Smooth hover transition */
+}
+
+.buy-now {
+  border: 2px solid #007bff;
+  color: #007bff;
+}
+
+.learn-more:hover,
+.buy-now:hover {
+  opacity: 0.8;
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+
+/* Keyframes for sliding effect */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%); /* Start off-screen */
+    opacity: 0; /* Fully transparent */
+  }
+  to {
+    transform: translateX(0); /* Slide to the center */
+    opacity: 1; /* Fully visible */
+  }
+}

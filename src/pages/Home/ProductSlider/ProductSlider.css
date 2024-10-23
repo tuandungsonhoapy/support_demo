@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.navigation-wrapper {
+  position: relative;
+}
+
+.keen-slider {
+  height: fit-content; /* Đảm bảo chiều cao đầy đủ cho slider */
+  /* Không có màu nền */
+}
+
+.keen-slider__slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 868px; /* Đặt chiều cao cho từng slide */
+  max-height: 100vh; /* Đảm bảo không vượt quá chiều cao của viewport */
+}
+
+/* Không có màu nền cho các slide */
+
+/* .number-slide1, .number-slide2, .number-slide3, .number-slide4, .number-slide5, .number-slide6 {
+  Không sử dụng màu nền hoặc gradient
+} */
+
+.category-titles {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0px; /* Khoảng cách giữa danh mục và slider */
+  padding: 0px; /* Thêm padding để không bị cắt bớt */
+  z-index: 10; /* Đảm bảo danh mục nằm trên các phần tử khác */
+}
+
+.category-title {
+  background: none; /* Không có màu nền */
+  border: 2px solid transparent;
+  border-radius: 5px;
+  color: #333;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 10px;
+  padding: 10px 20px;
+  transition: all 0.3s;
+}
+
+.category-title.active {
+  border-color: #007bff; /* Màu sắc của nút đang hoạt động */
+  color: #007bff; /* Màu chữ của nút đang hoạt động */
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: #fff;
+  cursor: pointer;
+}
+
+.arrow--left {
+  left: 5px;
+}
+
+.arrow--right {
+  right: 5px;
+}
+
+.arrow--disabled {
+  fill: #fff;
+}
+
+.dots {
+  display: flex;
+  padding: 10px 0;
+  justify-content: center;
+}
+
+.dot {
+  border: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.dot:focus {
+  outline: none;
+}
+
+.dot.active {
+  background: #000;
+}
